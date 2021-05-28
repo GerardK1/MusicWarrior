@@ -17,6 +17,8 @@ function preload() {
 
 function setup() {
     createCanvas(300, 400);
+    getAudioContext().suspend();
+    song.play();
     song.setVolume(0.9);
     buttonS = createButton('start');
     buttonS.mousePressed(goLeft);
@@ -114,8 +116,7 @@ function setup() {
   }
 
    function start() {
-
-    song.play();
+    userStartAudio();
     start = true;
   }
 
