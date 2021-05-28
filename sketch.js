@@ -16,7 +16,7 @@ function preload() {
   
 
 function setup() {
-    createCanvas(300, 400);
+    let cnv = createCanvas(300, 400);
     cnv.mousePressed(canvasPressed);
     buttonL = createButton('Left');
     buttonL.mousePressed(goLeft);
