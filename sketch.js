@@ -17,12 +17,7 @@ function preload() {
 
 function setup() {
     createCanvas(300, 400);
-    getAudioContext().suspend();
-    song.play();
-    song.setVolume(0.9);
-    buttonS = createButton('start');
-    buttonS.mousePressed(goLeft);
-    
+    cnv.mousePressed(canvasPressed);
     buttonL = createButton('Left');
     buttonL.mousePressed(goLeft);
     buttonShoot = createButton('Blast');
@@ -33,6 +28,12 @@ function setup() {
     volobj = new Volumeobj();
   }
   
+  function canvasPressed() {
+    // playing a sound file on a user gesture
+    // is equivalent to `userStartAudio()`
+    song.setVolume(0.9);
+    song.play();
+  }
   
 
   function draw() {
@@ -115,12 +116,7 @@ function setup() {
     }
   }
 
-   function start() {
-    userStartAudio();
-    start = true;
-  }
-
-  
+ 
 
   function goLeft() {
 
