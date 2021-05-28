@@ -8,6 +8,7 @@
 var stars = [];
 var blasts = [];
 var jellies = [];
+var start = false;
 
 function preload() {
     song = loadSound('Mozart.mp3');
@@ -16,8 +17,10 @@ function preload() {
 
 function setup() {
     createCanvas(300, 400);
-    song.play();
     song.setVolume(0.9);
+    buttonS = createButton('start');
+    buttonS.mousePressed(goLeft);
+    
     buttonL = createButton('Left');
     buttonL.mousePressed(goLeft);
     buttonShoot = createButton('Blast');
@@ -32,6 +35,7 @@ function setup() {
 
   function draw() {
     background(0);
+    if(start){
     volobj.updatevol();
     var vol = volobj.vol;
     var diam = map(vol, 0, 0.9, 10, 250);
@@ -105,7 +109,14 @@ function setup() {
 
 
       ship.show();
-      ship.move();  
+      ship.move();
+    }
+  }
+
+   function start() {
+
+    song.play();
+    start = true;
   }
 
   
