@@ -19,11 +19,11 @@ function preload() {
 function setup() {
     let cnv = createCanvas(300, 400);
     cnv.mousePressed(canvasPressed);
-    buttonL = createButton('____LEFT____');
+    buttonL = createButton('___LEFT___');
     buttonL.mousePressed(goLeft);
-    buttonShoot = createButton('____BLAST!____');
+    buttonShoot = createButton('___BLAST!___');
     buttonShoot.mousePressed(blastBtn);
-    buttonRight = createButton('____RIGHT____');
+    buttonRight = createButton('___RIGHT___');
     buttonRight.mousePressed(goRight);
     ship = new Ship();
     volobj = new Volumeobj();
