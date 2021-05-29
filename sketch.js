@@ -33,6 +33,7 @@ function setup() {
     // is equivalent to `userStartAudio()`
     song.setVolume(0.9);
     song.play();
+    var start = true;
   }
   
 
