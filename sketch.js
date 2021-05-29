@@ -39,7 +39,6 @@ function setup() {
 
   function draw() {
     background(0);
-    if(start){
     volobj.updatevol();
     var vol = volobj.vol;
     var diam = map(vol, 0, 0.9, 10, 250);
@@ -114,7 +113,6 @@ function setup() {
 
       ship.show();
       ship.move();
-    }
   }
 
  
