@@ -18,11 +18,11 @@ function preload() {
 function setup() {
     let cnv = createCanvas(300, 400);
     cnv.mousePressed(canvasPressed);
-    buttonL = createButton('Left');
+    buttonL = createButton('____Left____');
     buttonL.mousePressed(goLeft);
-    buttonShoot = createButton('Blast');
+    buttonShoot = createButton('____Blast____');
     buttonShoot.mousePressed(blastBtn);
-    buttonRight = createButton('Right');
+    buttonRight = createButton('____Right____');
     buttonRight.mousePressed(goRight);
     ship = new Ship();
     volobj = new Volumeobj();
@@ -32,7 +32,7 @@ function setup() {
     // playing a sound file on a user gesture
     // is equivalent to `userStartAudio()`
     if(!start){
-        song.setVolume(0.9);
+        song.setVolume(0.6);
         song.play();
         start = true;
     }
