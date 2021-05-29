@@ -31,9 +31,11 @@ function setup() {
   function canvasPressed() {
     // playing a sound file on a user gesture
     // is equivalent to `userStartAudio()`
-    song.setVolume(0.9);
-    song.play();
-    var start = true;
+    if(!start){
+        song.setVolume(0.9);
+        song.play();
+        start = true;
+    }
   }
   
 
