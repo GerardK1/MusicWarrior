@@ -9,6 +9,7 @@ var stars = [];
 var blasts = [];
 var jellies = [];
 var start = false;
+var score = 0;
 
 function preload() {
     song = loadSound('Mozart.mp3');
@@ -18,11 +19,11 @@ function preload() {
 function setup() {
     let cnv = createCanvas(300, 400);
     cnv.mousePressed(canvasPressed);
-    buttonL = createButton('____Left____');
+    buttonL = createButton('    LEFT    ');
     buttonL.mousePressed(goLeft);
-    buttonShoot = createButton('____Blast____');
+    buttonShoot = createButton('    BLAST!    ');
     buttonShoot.mousePressed(blastBtn);
-    buttonRight = createButton('____Right____');
+    buttonRight = createButton('    RIGHT    ');
     buttonRight.mousePressed(goRight);
     ship = new Ship();
     volobj = new Volumeobj();
@@ -41,6 +42,9 @@ function setup() {
 
   function draw() {
     background(0);
+
+    fill(255);
+    text(score, 280, 10);
     volobj.updatevol();
     var vol = volobj.vol;
     var diam = map(vol, 0, 0.9, 10, 250);
@@ -76,9 +80,14 @@ function setup() {
         blasts[i].move();
 
         for (var j = 0; j < jellies.length; j++) {
+            if (!jellies[j].hit){
             if (blasts[i].hits(jellies[j])) {
               jellies[j].explode();
               blasts[i].evaporate();
+              if (jellies[j].hit){
+                  score += 1;
+              }
+            }
             }
           }
         
@@ -130,6 +139,7 @@ function setup() {
 
   function blastBtn() {
 
+    ship.setDir(0);
     if(!ship.hit){
     var blast = new Blast(ship.x, (height - 35));
     blasts.push(blast);
