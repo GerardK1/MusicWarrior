@@ -33,7 +33,7 @@ function setup() {
     // playing a sound file on a user gesture
     // is equivalent to `userStartAudio()`
     if(!start){
-        song.setVolume(0.3);
+        song.setVolume(0.6);
         song.play();
         start = true;
     }
@@ -47,7 +47,7 @@ function setup() {
     text(score, 280, 10);
     volobj.updatevol();
     var vol = volobj.vol;
-    var diam = map(vol, 0, 0.9, 10, 250);
+    var diam = map(vol, 0, 0.6, 10, 250);
     if (volobj.createbaddie){
         var jelly = new Jelly(floor(random(width)),0);
         jellies.push(jelly);
