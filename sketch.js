@@ -49,7 +49,7 @@ function setup() {
     text(score, 280, 10);
     if(musicbool){
         volobj.updatevol();
-        var vol = volobj.vol;
+        vol = volobj.vol;
         musicbool = false;
     }
       else{
