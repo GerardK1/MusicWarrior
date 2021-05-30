@@ -10,7 +10,6 @@ var blasts = [];
 var jellies = [];
 var start = false;
 var score = 0;
-var musicbool = true;
 var vol = 0;
 
 function preload() {
@@ -47,14 +46,12 @@ function setup() {
 
     fill(255);
     text(score, 280, 10);
-    if(musicbool){
-        volobj.updatevol();
-        vol = volobj.vol;
-        musicbool = false;
-    }
-      else{
-          musicbool = true;
-      }
+  
+    volobj.updatevol();
+    vol = volobj.vol;
+    musicbool = false;
+    
+ 
       
     var diam = map(vol, 0, 0.6, 10, 250);
     if (volobj.createbaddie){
