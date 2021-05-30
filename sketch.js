@@ -10,6 +10,8 @@ var blasts = [];
 var jellies = [];
 var start = false;
 var score = 0;
+var musicbool = true;
+var vol = 0;
 
 function preload() {
     song = loadSound('Mozart.mp3');
@@ -45,8 +47,15 @@ function setup() {
 
     fill(255);
     text(score, 280, 10);
-    volobj.updatevol();
-    var vol = volobj.vol;
+    if(musicbool){
+        volobj.updatevol();
+        var vol = volobj.vol;
+        musicbool = false;
+    }
+      else{
+          musicbool = true;
+      }
+      
     var diam = map(vol, 0, 0.6, 10, 250);
     if (volobj.createbaddie){
         var jelly = new Jelly(floor(random(width)),0);
