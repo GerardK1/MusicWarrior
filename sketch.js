@@ -42,6 +42,7 @@ function setup() {
   
 
   function draw() {
+    if(start){  
     background(0);
 
     fill(255);
@@ -130,6 +131,7 @@ function setup() {
 
       ship.show();
       ship.move();
+    }
   }
 
  
